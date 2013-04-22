@@ -1,0 +1,21 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4537
+
+Highlighting for Linux console keyboard map files, as described in keymaps manual page.
+
+Note that most users do not need to create or edit Linux keyboard map files and so will not need the syntax highlighted either.
+
+No support yet for line continuation with backslash (which is supported by loadkeys command in the keymap file).
+
+Both string and character escapes are included (highlighted) in all strings (double-quoted) and characters (single-quoted) appearing in the file.
+
+There is no associated 'keymap' filetype, nor any auto-detection for it, so to see the highlighting you will have to use the:
+       :set syntax=keymap
+command manually (or in a modline if you wish).
+
+The highlighting for the number prefix (0 for octal, 0x for hexadecimal, U+ for unicode characters), is currently linked to the Vim  'Special' highlighting group (used for example for backslash escapes in string literals). If that looks too distracting with your preferred color scheme, it can be disabled with:
+       :let g:keymap_number_prefix = 0
+in your ~/.vimrc (or equivalent) file.
+
+All key names (symbolic constants) that are highlighted are taken from the output of 
+      dumpkeys --long-info
+from my Slackware 14.0 32-bit machine. It is possible your machine has a slightly different set of key names, you are welcome to report them to the script author.
